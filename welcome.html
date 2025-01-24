@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida / Welcome</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <h1 id="welcome-title"></h1>
+        <form method="post" action="/">
+            <label for="visitor_name" id="name-label"></label>
+            <input type="text" id="visitor_name" name="visitor_name" required>
+            
+            <label for="language" id="language-label"></label>
+            <select id="language" name="language">
+                <option value="es">Español</option>
+                <option value="en" selected>English</option>
+            </select>
+            
+            <button type="submit" id="submit-button"></button>
+        </form>
+    </div>
+    <script>
+        // Detect user's preferred language
+        const userLang = navigator.language || navigator.userLanguage;
+        const language = userLang.startsWith("es") ? "es" : "en";
+
+        // Text content in Spanish and English
+        const translations = {
+            es: {
+                welcome: "Bienvenido/a",
+                nameLabel: "Ingresa tu nombre:",
+                languageLabel: "Selecciona tu idioma:",
+                submitButton: "Enviar"
+            },
+            en: {
+                welcome: "Welcome",
+                nameLabel: "Enter your name:",
+                languageLabel: "Select your language:",
+                submitButton: "Submit"
+            }
+        };
+
+        // Update content based on selected language
+        function updateContent(lang) {
+            const text = translations[lang];
+            document.getElementById("welcome-title").textContent = text.welcome;
+            document.getElementById("name-label").textContent = text.nameLabel;
+            document.getElementById("language-label").textContent = text.languageLabel;
+            document.getElementById("submit-button").textContent = text.submitButton;
+
+            // Set selected option in the language dropdown
+            document.getElementById("language").value = lang;
+        }
+
+        // Event listener for language selection
+        document.getElementById("language").addEventListener("change", (event) => {
+            updateContent(event.target.value);
+        });
+
+        // Initialize content based on browser language
+        updateContent(language);
+    </script>
+</body>
+</html>

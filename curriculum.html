@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if language == "es" %}
+            Currículum de Daniela Rodríguez
+        {% else %}
+            Daniela Rodríguez's Resume
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>
+            {% if language == "es" %}
+                Currículum de Daniela Rodríguez
+            {% else %}
+                Daniela Rodríguez's Resume
+            {% endif %}
+        </h1>
+        <img src="/static/mi_foto.jpg" alt="Foto de Daniela Rodríguez" class="foto">
+        <p>
+            {% if language == "es" %}
+                Hola {{ visitor_name }}, mi nombre es Daniela Rodríguez. 😊
+            {% else %}
+                Hello {{ visitor_name }}, my name is Daniela Rodríguez. 😊
+            {% endif %}
+        </p>
+        <p>
+            {% if language == "es" %}
+                Soy estudiante de 4º semestre en Ciencia de Datos en la PUCE, Quito, Ecuador.
+            {% else %}
+                I am a 4th-semester Data Science student at PUCE, Quito, Ecuador.
+            {% endif %}
+        </p>
+
+        <h2>
+            {% if language == "es" %}
+                Habilidades
+            {% else %}
+                Skills
+            {% endif %}
+        </h2>
+        <ul>
+            <li>
+                {% if language == "es" %}
+                    Python, R, SQL
+                {% else %}
+                    Python, R, SQL
+                {% endif %}
+            </li>
+            <li>
+                {% if language == "es" %}
+                    Power BI, Tableau
+                {% else %}
+                    Power BI, Tableau
+                {% endif %}
+            </li>
+            <li>Machine Learning</li>
+            <li>
+                {% if language == "es" %}
+                    Estadística y Matemáticas Aplicadas
+                {% else %}
+                    Statistics and Applied Mathematics
+                {% endif %}
+            </li>
+            <li>
+                {% if language == "es" %}
+                    Visualización de datos
+                {% else %}
+                    Data Visualization
+                {% endif %}
+            </li>
+            <li>
+                {% if language == "es" %}
+                    Análisis de datos y limpieza de datos
+                {% else %}
+                    Data analysis and data cleaning
+                {% endif %}
+            </li>
+        </ul>
+
+        <h2>
+            {% if language == "es" %}
+                Experiencia Académica
+            {% else %}
+                Academic Experience
+            {% endif %}
+        </h2>
+        <ul>
+            <li>
+                {% if language == "es" %}
+                    Participación en proyectos de predicción de datos usando Python.
+                {% else %}
+                    Participation in data prediction projects using Python.
+                {% endif %}
+            </li>
+            <li>
+                {% if language == "es" %}
+                    Talleres de visualización de datos con Tableau y Power BI.
+                {% else %}
+                    Workshops on data visualization with Tableau and Power BI.
+                {% endif %}
+            </li>
+        </ul>
+
+        <h2>
+            {% if language == "es" %}
+                Información de Contacto
+            {% else %}
+                Contact Information
+            {% endif %}
+        </h2>
+        <p>
+            {% if language == "es" %}
+                Correo: daniela.rodriguez@example.com<br>
+                LinkedIn: <a href="https://linkedin.com/in/daniela-rodriguez">linkedin.com/in/daniela-rodriguez</a>
+            {% else %}
+                Email: daniela.rodriguez@example.com<br>
+                LinkedIn: <a href="https://linkedin.com/in/daniela-rodriguez">linkedin.com/in/daniela-rodriguez</a>
+            {% endif %}
+        </p>
+
+        <h2>
+            {% if language == "es" %}
+                Visualización de habilidades
+            {% else %}
+                Skills Visualization
+            {% endif %}
+        </h2>
+        <canvas id="skillsChart" width="400" height="200"></canvas>
+        <script src="/static/script.js"></script>
+      
+        <a href="/" class="button">
+            {% if language == "es" %}
+                Volver a la bienvenida
+            {% else %}
+                Back to Welcome
+            {% endif %}
+        </a>
+    </div>
+    <script src="/static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+
